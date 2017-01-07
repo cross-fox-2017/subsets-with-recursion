@@ -1,5 +1,4 @@
-var result = 1
-let choose_team = (n, k) => {
+let choose_team = (n, k, result=1) => {
   //write your code here
   let h = n - k
   if (k == 0){
@@ -8,13 +7,11 @@ let choose_team = (n, k) => {
   if (n > h){
     result *= n
     result /= k
-    choose_team(n-1, k-1)
+    return choose_team(n-1, k-1, result)
   }
   return result
 }
 
 console.log(choose_team(6, 2));
-var result = 1
 console.log(choose_team(6, 3));
-var result = 1
 console.log(choose_team(24, 4));
