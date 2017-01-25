@@ -14,14 +14,11 @@
 // }
 
 let choose_team = (n,k) => {
-  if (n>=k) {
-    if(n == k || k == 0){
+  if (n>=k)
+    if(k == 0 || k == n)
       return 1
-    }
-    else {
-       return choose_team(n-1,k)+choose_team(n-1,k-1)
-    }
-  }
+    return choose_team(n-1,k)+choose_team(n-1,k-1)
+}
   // else {
   //   if (k < n-k) {
   //     k = n-k
@@ -33,7 +30,6 @@ let choose_team = (n,k) => {
   //   }
   //   return faktor_range(n,k+1)/faktor_range(n-k,1);
   // }
-}
 
 // console.log(faktor_range(4,1));//24
 // console.log(faktor_range(4,2));//24
